@@ -209,6 +209,7 @@ function setTime(){
         start.innerHTML="RESET";
         stop.style.display = "none";
         pause.style.display = "block";
+        soundRepeat = 0;
         if(Seconds.selected)
             timerMilli=timerMilli*(1000);
         else if(Minutes.selected)
@@ -286,8 +287,11 @@ function updateTimer(){
     }
 }
 
+var soundRepeat = 0;
+
 sound.addEventListener("ended", function(){
-    if(soundSource!=""){
+    if(soundSource!=""&& soundRepeat<10){
+        soundRepeat++;
         sound.src=soundSource;
         sound.currentTime = 0;
         sound.play();
