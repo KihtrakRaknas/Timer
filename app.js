@@ -39,13 +39,17 @@ const Centuries = document.getElementById("Centuries");
 window.onload = function(){
     Minutes.selected=true;
     canvas.width = document.body.clientWidth;
-	canvas.height = window.innerHeight-document.getElementById("controlPanel").offsetHeight;;
+	canvas.height = window.innerHeight-document.getElementById("controlPanel").offsetHeight;
     //var part = new sparks(50,50);
     //spark(50,50);
     ctx.scale(canvas.width/680,canvas.width/680);
     var loop = setInterval(update,5);
 }
 
+window.onresize = function(){
+	canvas.width = document.body.clientWidth;
+	canvas.height = window.innerHeight-document.getElementById("controlPanel").offsetHeight;
+}
 var parts=[];
 
 function addPart(x,y){
