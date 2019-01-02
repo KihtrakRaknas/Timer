@@ -49,6 +49,7 @@ window.onload = function(){
 window.onresize = function(){
 	canvas.width = document.body.clientWidth;
 	canvas.height = window.innerHeight-document.getElementById("controlPanel").offsetHeight;
+	ctx.scale(canvas.width/680,canvas.width/680);
 }
 var parts=[];
 
